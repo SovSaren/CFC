@@ -1,0 +1,11 @@
+.footer{
+    width: 100%;
+    height: 10vh;
+    color: blue;
+    background-color: crimson;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+

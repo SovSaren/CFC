@@ -12,6 +12,7 @@ import
   from "@material-ui/core";
 
   import HomeIcon from '@material-ui/icons/Home';
+  import Text from './../components/containers/Text'
   
 
 
@@ -47,6 +48,7 @@ export default function Home(){
       <br></br>
       < Paper>Paper</Paper>
       <HomeIcon></HomeIcon>
+      <Text text="sas"></Text>
 
  
 

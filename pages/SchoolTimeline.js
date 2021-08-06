@@ -1,8 +1,14 @@
-import Appbar from "./../components/containers/Appbar"
-import NavigationMenu from "./../components/containers/NavigationMenu"
+import Appbar from "../components/containers/Appbar"
+
+ 
 
 export default function SchoolTimeline(){
     return(
-      <Appbar text="School Timeline"></Appbar>
+          <div>
+                
+                
+                
+              
+           </div>
     )
 }

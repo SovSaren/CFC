@@ -9,11 +9,12 @@ import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 10,
+    flexGrow: 12,
+    backgroundColor:"red"
     
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 12,
     fontFamily:"Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
   },
 }));
@@ -23,13 +24,13 @@ export default function ButtonAppBar({text}) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="absolute">
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
-           <h5>{text}</h5>
+           <h5 style={{fontSize:20,textAlign:'center'}}>{text}</h5>
          </Typography>
           
-          <Button color="inherit" >< AccountCircleIcon style={{width:50,height:50}}></AccountCircleIcon></Button>
+          <Button color="inherit" >< AccountCircleIcon style={{width:30,height:30}}></AccountCircleIcon></Button>
         </Toolbar>
       </AppBar>
     </div>

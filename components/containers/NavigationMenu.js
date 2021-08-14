@@ -16,10 +16,17 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Link from 'next/link'
+import Link from 'next/link';
 import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import AccessibilityNewTwoToneIcon from '@material-ui/icons/AccessibilityNewTwoTone';
-const drawerWidth = 240;
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import TodayIcon from '@material-ui/icons/Today';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import KeyboardIcon from '@material-ui/icons/Keyboard';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import PanToolIcon from '@material-ui/icons/PanTool';
+import Paper from '@material-ui/core/Paper'
+const drawerWidth = 270;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -67,27 +74,32 @@ function NavigationMenu(props) {
    
         {
             path: '/schooltimeline',
-            icon: <AccessibilityNewTwoToneIcon  />,
+            icon: <AccountBalanceIcon  />,
             name: 'School Time Line'
         },
         {
             path: '/classtimeline',
-            icon: <MailIcon style={{color: 'red'}}/>,
+            icon: <TodayIcon />,
             name: 'Class Time Line',
         },
         {
+            path:'/teachingandlearning',
+            icon: <MenuBookIcon/>,
+            name: 'Teaching and Learning',
+        },
+        {
             path:'/reaultevaluattion',
-            icon: <HomeTwoToneIcon />,
+            icon: <KeyboardIcon />,
             name: 'Reault Evaluattion',
         },
         {
             path:'/attendence',
-            icon: <HomeTwoToneIcon />,
+            icon: <AssignmentTurnedInIcon />,
             name: 'Attendence',
         },
         {
             path:'/permisson',
-            icon: <HomeTwoToneIcon />,
+            icon: <PanToolIcon />,
             name: 'Permisson',
         },
     ]
@@ -96,19 +108,24 @@ function NavigationMenu(props) {
         <div>
             <div className={classes.toolbar} />
             <Divider />
+           
 
             <List>
+            <Paper>
+                
                 {navs.map((page, index) => (
+                    
 
                     <Link href={page.path}>
                         <ListItem button key={index}>
-                        <ListItemIcon>{page.icon}</ListItemIcon>
+                        <ListItemIcon style={{color: 'blue'}}>{page.icon}</ListItemIcon>
                         <ListItemText primary={page.name} />
                         </ListItem>
                     </Link>
 
 
                 ))}
+            </Paper>
             </List>
 
         </div>

@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Image from 'next/image'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SimpleBottomNavigation from './../components/persentation/NavigationButton'
+import ButtonAppBar from './../components/containers/Appbar'
 import { red } from '@material-ui/core/colors';
 import { textAlign } from '@material-ui/system';
 
@@ -17,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
     gridGap: theme.spacing(1),
-    width:"90%",
-    height:'60vh',
+    width:"70%",
+    height:'70vh',
     marginLeft:'auto',
     marginRight:'auto',
   },
   paper: {
-     width:"90%",
+     width:"70%",
      marginRight:'auto',
      marginLeft:'auto',
   },
@@ -34,7 +35,7 @@ export default function CSSGrid() {
 
   return (
     <div>
-      
+      <ButtonAppBar text="School timeline"></ButtonAppBar>
                 <Paper className={classes.paper}>
             
                         <Grid container>
@@ -54,7 +55,7 @@ export default function CSSGrid() {
                         </Grid>
                         <Paper elevation={1} style={{marginTop:20, }}>
                           <Grid className={classes.container} >
-                              <Image  src="/images/news.jpg" alt="Picture of the author" width={1100} height={600} />
+                              <Image  src="/images/news.jpg" alt="Picture of the author" width={'70vh'} height={600} />
                           </Grid>
                         </Paper>
                         <Paper elevation={6}>

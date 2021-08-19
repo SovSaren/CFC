@@ -26,6 +26,12 @@ import KeyboardIcon from '@material-ui/icons/Keyboard';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import PanToolIcon from '@material-ui/icons/PanTool';
 import Paper from '@material-ui/core/Paper'
+import Avatar from '@material-ui/core/Avatar';
+import ButtonAppBar from './Appbar';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+
+
 const drawerWidth = 270;
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +60,14 @@ const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
+        
+    },
+    toolbars: {
+        height:150,
+        backgroundImage: "url('https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80')",
+        backgroundSize:"cover",
+
+
     },
     content: {
         flexGrow: 1,
@@ -106,7 +120,17 @@ function NavigationMenu(props) {
 
     const drawer = (
         <div>
-            <div className={classes.toolbar} />
+            <div className={classes.toolbars}  >
+                <div style={{paddingTop:25,paddingLeft:10,}}>
+                        <Avatar style={{width:60,height:60,}}><AccountCircleIcon style={{width:60,height:60,}}></AccountCircleIcon></Avatar>   
+                        <Typography style={{color:'blue'}}>
+                            <Link  href="#">
+                                Sov Saren
+                            </Link>
+                        </Typography>             
+                        <Typography>+855 99 218 567</Typography>
+                </div>
+            </div>
             <Divider />
            
 
@@ -124,7 +148,9 @@ function NavigationMenu(props) {
                     </Link>
 
 
+
                 ))}
+
             </Paper>
             </List>
 
@@ -136,22 +162,7 @@ function NavigationMenu(props) {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        className={classes.menuButton}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap>
-                        App Name
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+           
             <nav className={classes.drawer} aria-label="mailbox folders">
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Hidden smUp implementation="css">

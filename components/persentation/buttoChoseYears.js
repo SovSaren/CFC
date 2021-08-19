@@ -10,9 +10,12 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 
-const options = ['Class 7', 'Class 8', 'Class 9','Class 10','Class 11','Choose Your Class'];
+const options = ['January 2021-2022', 'February 2021-2022','March 2021-2022','April 2021-2022',
+'May 2021-2022', 'June 2021-2022', 'July 2021-2022','August 2021-2022','Spetember 2021-2022' ,
+'October 2021-2022','Noveber 2021-2022','December 2021-2022'
+]
 
-export default function ChooseClass() {
+export default function ChooseYears() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -37,7 +40,6 @@ export default function ChooseClass() {
 
     setOpen(false);
   };
- 
 
   return (
     <Grid container direction="column" alignItems="center" style={{width:100}}>
@@ -70,7 +72,7 @@ export default function ChooseClass() {
                     {options.map((option, index) => (
                       <MenuItem
                         key={option}
-                        disabled={index === 5}
+                        disabled={index === 13}
                         selected={index === selectedIndex}
                         style={{backgroundColor:'rgba(167, 250, 246, 0.986)',width:250,}}
                         onClick={(event) => handleMenuItemClick(event, index)}

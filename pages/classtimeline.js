@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ChooseClass from './../components/persentation/ButtonChooseClass'
+import ButtonAppBar from './../components/containers/Appbar'
 
 const useStyles = makeStyles({
   table: {
@@ -32,8 +33,10 @@ export default function BasicTable() {
 
   return (
       <diV>
+        <ButtonAppBar text="Class Timline"></ButtonAppBar>
         <di style={{float: "left"}}>
             <ChooseClass ></ChooseClass>
+           
        </di>
                 <TableContainer component={Paper} style={{marginTop:30,}}>
                 <Table className={classes.table} aria-label="simple table">

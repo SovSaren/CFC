@@ -4,7 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
+import {Link} from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,11 +27,18 @@ export default function ButtonAppBar({text}) {
     <div className={classes.root}>
       <AppBar position="absolute">
         <Toolbar>
-          <Typography variant="h5" className={classes.title}>
-           <h5 style={{fontSize:20,textAlign:'center'}}>{text}</h5>
+          <Typography variant="h4" className={classes.title} style={{marginLeft:300}}>
+            {text}
          </Typography>
           
-          <Button color="inherit" >< AccountCircleIcon style={{width:30,height:30}}></AccountCircleIcon></Button>
+          
+
+          <Typography>
+                    <Link href="#" style={{color:'black',width:50,height:50,}}>
+                      <  ChatBubbleTwoToneIcon style={{color:'white',width:40,height:40,}}></ ChatBubbleTwoToneIcon>
+                    </Link>
+                </Typography>
+         
         </Toolbar>
       </AppBar>
     </div>

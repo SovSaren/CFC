@@ -1,4 +1,4 @@
-import styles from './../../styles/register.module.css'
+import styles from './../../styles/login.module.css'
 import Paper from '@material-ui/core/Paper'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Login from './../../components/containers/login'

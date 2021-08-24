@@ -46,7 +46,7 @@ const navs2 = [
       name: 'Attaching file in Gmail'
   },
   {
-      path: '/classtimeline',
+      path: 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80',
       icon: <RestoreIcon/>,
       name: 'Create and sending Gmail',
   },

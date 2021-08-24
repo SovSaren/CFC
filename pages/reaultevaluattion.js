@@ -11,6 +11,8 @@ import ChooseClass from './../components/persentation/ButtonChooseClass'
 import ChooseYears from './../components/persentation/buttoChoseYears'
 import FreeSoloCreateOption from './../components/persentation/buttonSearch'
 import ButtonAppBar from './../components/containers/Appbar'
+import TextField from '@material-ui/core/TextField';
+import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -35,11 +37,13 @@ function createData(name,attensdance, activity, exam, totalscore, rank,) {
 }
 
 const rows = [
-  createData('Sov Saren', 159, 6.0, 24, 4.0,3,4),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3,3,6),
-  createData('Eclair', 262, 16.0, 24, 6.0,2,7),
-  createData('Cupcake', 305, 3.7, 67, 4.3,2,8),
-  createData('Gingerbread', 356, 16.0, 49, 3.9,4,9),
+  createData('Sov Saren', 10, 30, 60, 100,1),
+  createData('Rati',10, 30, 60, 100,1),
+  createData('Dyna', 10, 30, 60, 100,1),
+  createData('Sreydet',10, 30, 60, 100,1),
+  createData('Danit', 10, 30, 60, 100,1),
+  createData('Pina', 10, 30, 60, 100,1),
+  createData('Both', 10, 30, 60, 100,1),
 ];
 
 const useStyles = makeStyles({
@@ -47,10 +51,12 @@ const useStyles = makeStyles({
     minWidth: 700,
   },
 });
-
+const filter = createFilterOptions();
 export default function CustomizedTables() {
   const classes = useStyles();
-
+  const [value, setValue] = React.useState({
+    name: ''
+  });
   return (
        <div>
           <ButtonAppBar text="Reault evaluattion"></ButtonAppBar>
@@ -76,7 +82,68 @@ export default function CustomizedTables() {
           <Table className={classes.table} aria-label="customized table">
             <TableHead>
               <TableRow >
-              <StyledTableCell  > <FreeSoloCreateOption  data ={rows}/> </StyledTableCell>
+              <StyledTableCell  >    
+                 <Autocomplete
+      value={value}
+      onChange={(event, newValue) => {
+        if(newValue !==null){
+          if (typeof newValue === 'string') {
+            setValue({
+              name: newValue,
+            });
+          } else if (newValue && newValue.inputValue) {
+            // Create a new value from the user input
+            setValue({
+              name: newValue.inputValue,
+            });
+          } else {
+            setValue(newValue);
+          }
+        }
+        else{
+          setValue({
+            name: ''
+          })
+        }
+      }}
+      filterOptions={(options, params) => {
+        const filtered = filter(options, params);
+
+        // Suggest the creation of a new value
+        if (params.inputValue !== '') {
+          filtered.push({
+            inputValue: params.inputValue,
+            name: `Add "${params.inputValue}"`,
+          });
+        }
+
+        return filtered;
+      }}
+      selectOnFocus
+      clearOnBlur
+      handleHomeEndKeys
+      id="free-solo-with-text-demo"
+      options={rows}
+      getOptionLabel={(option) => {
+        // Value selected with enter, right from the input
+        if (typeof option === 'string') {
+          return option;
+        }
+        // Add "xxx" option created dynamically
+        if (option.inputValue) {
+          return option.inputValue;
+        }
+        // Regular option
+        return option.name;
+      }}
+      renderOption={(option) => option.name}
+      style={{ width: 160,height:50, }}
+      freeSolo
+      renderInput={(params) => (
+        <TextField {...params} label="Search your Name" variant="outlined"  />
+      )}
+    /> 
+    </StyledTableCell>
                 <StyledTableCell align="right">Attensdance</StyledTableCell>
                 <StyledTableCell align="right">Activity</StyledTableCell>
                 <StyledTableCell align="right">Exam</StyledTableCell>
@@ -85,7 +152,7 @@ export default function CustomizedTables() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {rows.filter((item)=>item.name.includes(value.name)).map((row) => (
                 <StyledTableRow key={row.name}>
                   <StyledTableCell component="th" scope="row">
                     {row.name}

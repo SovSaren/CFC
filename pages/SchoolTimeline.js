@@ -11,6 +11,7 @@ import SimpleBottomNavigation from './../components/persentation/NavigationButto
 import ButtonAppBar from './../components/containers/Appbar'
 import { red } from '@material-ui/core/colors';
 import { textAlign } from '@material-ui/system';
+import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
 
 
 
@@ -18,15 +19,20 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
     gridGap: theme.spacing(1),
-    width:"70%",
-    height:'70vh',
+    width:"100%",
+    height:'50vh',
     marginLeft:'auto',
     marginRight:'auto',
+    marginTop:20,
+    backgroundImage:"url('https://www.unicef.org/cambodia/sites/unicef.org.cambodia/files/styles/hero_desktop/public/Education-UN0225343.jpg?itok=GQFbtw_U')",
+    backgroundSize:'cover'
   },
   paper: {
-     width:"70%",
+     width:"80%",
      marginRight:'auto',
      marginLeft:'auto',
+     paddingTop:20,
+    
   },
 }));
 
@@ -55,7 +61,6 @@ export default function CSSGrid() {
                         </Grid>
                         <Paper elevation={1} style={{marginTop:20, }}>
                           <Grid className={classes.container} >
-                              <Image  src="/images/news.jpg" alt="Picture of the author" width={'70vh'} height={600} />
                           </Grid>
                         </Paper>
                         <Paper elevation={6}>

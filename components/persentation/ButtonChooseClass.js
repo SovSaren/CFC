@@ -40,8 +40,8 @@ export default function ChooseClass() {
  
 
   return (
-    <Grid container direction="column" alignItems="center" style={{width:100}}>
-      <Grid item xs={12} style={{width:100}}>
+    <Grid container direction="column" alignItems="center" style={{width:100,}}>
+      <Grid item xs={12} style={{width:100 }}>
         <ButtonGroup variant="contained" color="white" ref={anchorRef} aria-label="split button">
           <Button onClick={handleClick} color="white" style={{width:350,height:50,fontSize:20,}}>{options[selectedIndex]}</Button>
           <Button

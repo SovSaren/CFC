@@ -26,17 +26,24 @@ export default function ImgMediaCard() {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image="/images/news.jpg"
+          image="/images/TEVEAAMRIT.jpg "
           title="Contemplative Reptile"
-          height="150"
+          height="200"
+
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Seiha Tith
+          THY TEVEAAMRIT
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             , with over 6,000 species, ranging
             across all continents except Antarctica
+          </Typography>
+          <Typography variant="body2" color="blank" component="p">
+           Contact: 095 30 37 54
+          </Typography>
+          <Typography variant="body2" color="blank" component="p">
+           Email: seihatith@gmail.com
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -1,6 +1,6 @@
 import styles from './../../styles/register.module.css'
 import Paper from '@material-ui/core/Paper';
-import Register from './../../components/containers/register'
+import Register from '../components/containers/register'
 
 
 export default function registerPage(){

@@ -14,6 +14,14 @@ const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
+  root :{
+    marginTop:20,
+    width:'90%',
+    marginLeft:'auto',
+    marginRight:'auto'
+
+    
+  }
 });
 
 function createData(name, monday, tuesday, wednesday, thursday,friday,saturday) {
@@ -27,18 +35,25 @@ const rows = [
   createData('Time 10:00-10:50',null, "7E", "7J", "7G", "7H", "7I"),
   createData('Time 11:00-11:50', null, null,null,"7F" ,"7J","7I"),
 ];
+const row = [
+  createData('Time 7:00-7:50', "12B", "7B", null,"7C", "7D"),
+  createData('Time 8:00-8:50', "7A", null,"7B", null,"7C","7D"),
+  createData('Time 9:00-9:50',null, "7E", "7F", null, "7G","7H"),
+  createData('Time 10:00-10:50',null, "7E", "7J", "7G", "7H", "7I"),
+  createData('Time 11:00-11:50', null, null,null,"7F" ,"7J","7I"),
+];
 
 export default function BasicTable() {
   const classes = useStyles();
 
   return (
-      <diV>
+      <diV className ={classes.root}>
         <ButtonAppBar text="Class Timline"></ButtonAppBar>
-        <di style={{float: "left"}}>
+        <div style={{float: "left" ,marginBottom:30,}}>
             <ChooseClass ></ChooseClass>
            
-       </di>
-                <TableContainer component={Paper} style={{marginTop:30,}}>
+       </div>
+                <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>
                     <TableRow>
@@ -72,3 +87,4 @@ export default function BasicTable() {
      </diV>
   );
 }
+

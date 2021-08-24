@@ -6,21 +6,24 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import ShareIcon from '@material-ui/icons/Share';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import CommentIcon from '@material-ui/icons/Comment';
+import styles from './../../styles/schooltimeline.module.css'
+import { borderRadius } from '@material-ui/system';
 
 const useStyles = makeStyles({
   root: {
-    width: "70%",
+    width: "100%",
     fontSize:80,
     marginLeft:'auto',
     marginRight:'auto',
   },
-  item :{
+  item1:{
     color:'black',
-    fontSize:30,
-    width:30,
-    height:60,    
-    marginLeft:100,
-    marginRight:100,
+    fontSize:70,
+    width:500,
+    height:55,    
+    marginRight:80,
+    marginLeft:80,
+    borderRadius:20,
   }
 });
 
@@ -37,9 +40,9 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction className={classes.item} label="Like" icon={<ThumbUpIcon />} />
-      <BottomNavigationAction className={classes.item} label="Comment" icon={<CommentIcon />} />
-      <BottomNavigationAction className={classes.item} label="Share" icon={<ShareIcon />} />
+      <BottomNavigationAction   className={styles.item} className={classes.item1}  label="Like" icon={<ThumbUpIcon  style={{fontSize:40}}/>}  />
+      <BottomNavigationAction className={classes.item1} label="Comment" icon={<CommentIcon style={{fontSize:40}} />} />
+      <BottomNavigationAction className={classes.item1} label="Share" icon={<ShareIcon  style={{fontSize:40}} />} />
     </BottomNavigation>
   );
 }

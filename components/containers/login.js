@@ -1,11 +1,11 @@
 import React from 'react';
 import { Grid,Paper, Typography ,Avatar,TextField,Button,Link} from '@material-ui/core';
 import styles from './../../styles/signin.module.css'
-import MenuIcon from '@material-ui/icons/Menu';
 import { FormControlLabel } from '@material-ui/core';
 import { Checkbox } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import AlternateEmailOutlinedIcon from '@material-ui/icons/AlternateEmailOutlined';
+
 
 
 const useStyles = makeStyles({
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
       minWidth: 650,
     },
   });
-
+   
 
 export default function Login(){
     const classes = useStyles();
@@ -25,7 +25,7 @@ export default function Login(){
                     <Avatar style={{backgroundColor:'#3cd4a3'}}>< AlternateEmailOutlinedIcon/ ></Avatar>
                     <h1>Sign In</h1>  
                 </Grid>
-                <TextField label = 'User name' placeholder='Enter username' fullWidth required></TextField>
+                <TextField label = 'User name' name = 'Username' placeholder='Enter username' fullWidth required></TextField>
                 <TextField label = 'Password' placeholder='Enter password' fullWidth required></TextField>
                 <FormControlLabel 
                         control={
@@ -46,9 +46,9 @@ export default function Login(){
 
                     </Link>
                 </Typography>
-                <Typography>
+                <Typography >
                     Do you have an accounnt?
-                    <Link href="#">
+                    <Link href="/">
                       Sign up
 
                     </Link>

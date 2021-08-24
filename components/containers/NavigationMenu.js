@@ -1,24 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Link from 'next/link';
-import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
-import AccessibilityNewTwoToneIcon from '@material-ui/icons/AccessibilityNewTwoTone';
+import styles from './../../styles/menu.module.css'
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import TodayIcon from '@material-ui/icons/Today';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
@@ -27,12 +20,14 @@ import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import PanToolIcon from '@material-ui/icons/PanTool';
 import Paper from '@material-ui/core/Paper'
 import Avatar from '@material-ui/core/Avatar';
-import ButtonAppBar from './Appbar';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone';
 
 
 
-const drawerWidth = 270;
+
+
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -71,7 +66,10 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding:theme.spacing(4),
+    },
+    paper:{
+        backgroundColor:'#cfe8ec',
     },
 }));
 
@@ -89,12 +87,12 @@ function NavigationMenu(props) {
         {
             path: '/schooltimeline',
             icon: <AccountBalanceIcon  />,
-            name: 'School Time Line'
+            name: 'School TimeLine'
         },
         {
             path: '/classtimeline',
             icon: <TodayIcon />,
-            name: 'Class Time Line',
+            name: 'Class TimeLine',
         },
         {
             path:'/teachingandlearning',
@@ -104,7 +102,7 @@ function NavigationMenu(props) {
         {
             path:'/reaultevaluattion',
             icon: <KeyboardIcon />,
-            name: 'Reault Evaluattion',
+            name: 'Reault Evaluattion ',
         },
         {
             path:'/attendence',
@@ -119,39 +117,43 @@ function NavigationMenu(props) {
     ]
 
     const drawer = (
-        <div>
+        <div  className={styles.menus}>
             <div className={classes.toolbars}  >
                 <div style={{paddingTop:25,paddingLeft:10,}}>
-                        <Avatar style={{width:60,height:60,}}><AccountCircleIcon style={{width:60,height:60,}}></AccountCircleIcon></Avatar>   
-                        <Typography style={{color:'blue'}}>
+                    
+                        <Avatar style={{width:50,height:50,}}><AccountCircleIcon style={{width:60,height:60,}}></AccountCircleIcon></Avatar>   
+                        <Typography style={{color:'white'}}>
                             <Link  href="#">
                                 Sov Saren
                             </Link>
                         </Typography>             
-                        <Typography>+855 99 218 567</Typography>
+                        <Typography  style={{color:'white'}}>+855 99 218 567</Typography>
                 </div>
             </div>
             <Divider />
            
-
             <List>
-            <Paper>
+            <Paper className={classes.paper}>
                 
                 {navs.map((page, index) => (
                     
 
-                    <Link href={page.path}>
-                        <ListItem button key={index}>
-                        <ListItemIcon style={{color: 'blue'}}>{page.icon}</ListItemIcon>
-                        <ListItemText primary={page.name} />
+                    <Link href={page.path}  > 
+                        <ListItem  className={classes.texts}  button key={index} >
+                        <ListItemIcon style={{color: 'blue',height:50,}}>{page.icon}</ListItemIcon>
+                        <ListItemText style={{height:50,}} primary={page.name} />
                         </ListItem>
                     </Link>
-
-
-
                 ))}
+                   
 
             </Paper>
+            <Link href="/form/loginPage" > 
+                        <ListItem  button  style={{color:'red'}}>
+                        <ListItemIcon style={{color: 'blue'}}><ExitToAppTwoToneIcon  /></ListItemIcon>
+                        <ListItemText primary="Logout"/>
+                        </ListItem>
+                    </Link>
             </List>
 
         </div>

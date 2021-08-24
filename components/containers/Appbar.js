@@ -4,19 +4,24 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { red } from '@material-ui/core/colors';
+import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
+import {Link} from '@material-ui/core';
+import Mantis from './../persentation/text/Mantis Rumble_PersonalUseOnly';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 12,
-    backgroundColor:"red"
     
   },
   title: {
     flexGrow: 12,
-    fontFamily:"Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
+    fontFamily:"Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
+    color:'black',
   },
+  appbar:{
+    backgroundColor:"#f2e1f3",
+    height:80,
+  }
 }));
 
 export default function ButtonAppBar({text}) {
@@ -24,13 +29,20 @@ export default function ButtonAppBar({text}) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="absolute">
+      <AppBar position="absolute" className={classes.appbar}>
         <Toolbar>
-          <Typography variant="h5" className={classes.title}>
-           <h5 style={{fontSize:20,textAlign:'center'}}>{text}</h5>
-         </Typography>
+          <p  className={classes.title} style={{marginLeft:300,fontSize:50,}}>
+            <Mantis>{text}</Mantis>
+         </p>
           
-          <Button color="inherit" >< AccountCircleIcon style={{width:30,height:30}}></AccountCircleIcon></Button>
+          
+
+          <Typography>
+                    <Link href="/coment" style={{color:'black',width:50,height:50,}}>
+                      <  ChatBubbleTwoToneIcon style={{color:' #042453',width:40,height:40,}}></ ChatBubbleTwoToneIcon>
+                    </Link>
+                </Typography>
+         
         </Toolbar>
       </AppBar>
     </div>

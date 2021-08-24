@@ -1,25 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Link from 'next/link'
-import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
-import AccessibilityNewTwoToneIcon from '@material-ui/icons/AccessibilityNewTwoTone';
-const drawerWidth = 240;
+import Link from 'next/link';
+import styles from './../../styles/menu.module.css'
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import TodayIcon from '@material-ui/icons/Today';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import KeyboardIcon from '@material-ui/icons/Keyboard';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import PanToolIcon from '@material-ui/icons/PanTool';
+import Paper from '@material-ui/core/Paper'
+import Avatar from '@material-ui/core/Avatar';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone';
+
+
+
+
+
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -47,10 +55,21 @@ const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
+        
+    },
+    toolbars: {
+        height:150,
+        backgroundImage: "url('https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80')",
+        backgroundSize:"cover",
+
+
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding:theme.spacing(4),
+    },
+    paper:{
+        backgroundColor:'#cfe8ec',
     },
 }));
 
@@ -67,48 +86,74 @@ function NavigationMenu(props) {
    
         {
             path: '/schooltimeline',
-            icon: <AccessibilityNewTwoToneIcon  />,
-            name: 'School Time Line'
+            icon: <AccountBalanceIcon  />,
+            name: 'School TimeLine'
         },
         {
             path: '/classtimeline',
-            icon: <MailIcon style={{color: 'red'}}/>,
-            name: 'Class Time Line',
+            icon: <TodayIcon />,
+            name: 'Class TimeLine',
+        },
+        {
+            path:'/teachingandlearning',
+            icon: <MenuBookIcon/>,
+            name: 'Teaching and Learning',
         },
         {
             path:'/reaultevaluattion',
-            icon: <HomeTwoToneIcon />,
-            name: 'Reault Evaluattion',
+            icon: <KeyboardIcon />,
+            name: 'Reault Evaluattion ',
         },
         {
             path:'/attendence',
-            icon: <HomeTwoToneIcon />,
+            icon: <AssignmentTurnedInIcon />,
             name: 'Attendence',
         },
         {
             path:'/permisson',
-            icon: <HomeTwoToneIcon />,
+            icon: <PanToolIcon />,
             name: 'Permisson',
         },
     ]
 
     const drawer = (
-        <div>
-            <div className={classes.toolbar} />
+        <div  className={styles.menus}>
+            <div className={classes.toolbars}  >
+                <div style={{paddingTop:25,paddingLeft:10,}}>
+                    
+                        <Avatar style={{width:50,height:50,}}><AccountCircleIcon style={{width:60,height:60,}}></AccountCircleIcon></Avatar>   
+                        <Typography style={{color:'white'}}>
+                            <Link  href="#">
+                                Sov Saren
+                            </Link>
+                        </Typography>             
+                        <Typography  style={{color:'white'}}>+855 99 218 567</Typography>
+                </div>
+            </div>
             <Divider />
-
+           
             <List>
+            <Paper className={classes.paper}>
+                
                 {navs.map((page, index) => (
+                    
 
-                    <Link href={page.path}>
-                        <ListItem button key={index}>
-                        <ListItemIcon>{page.icon}</ListItemIcon>
-                        <ListItemText primary={page.name} />
+                    <Link href={page.path}  > 
+                        <ListItem  className={classes.texts}  button key={index} >
+                        <ListItemIcon style={{color: 'blue',height:50,}}>{page.icon}</ListItemIcon>
+                        <ListItemText style={{height:50,}} primary={page.name} />
                         </ListItem>
                     </Link>
-
-
                 ))}
+                   
+
+            </Paper>
+            <Link href="/form/loginPage" > 
+                        <ListItem  button  style={{color:'red'}}>
+                        <ListItemIcon style={{color: 'blue'}}><ExitToAppTwoToneIcon  /></ListItemIcon>
+                        <ListItemText primary="Logout"/>
+                        </ListItem>
+                    </Link>
             </List>
 
         </div>
@@ -119,22 +164,7 @@ function NavigationMenu(props) {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        className={classes.menuButton}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap>
-                        App Name
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+           
             <nav className={classes.drawer} aria-label="mailbox folders">
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Hidden smUp implementation="css">

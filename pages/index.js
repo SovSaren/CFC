@@ -1,58 +1,23 @@
-
-import 
-{  
-  ButtonGroup ,
-   Button ,
-   Typography,
-   Paper,
-   makeStyles ,
-   BottomNavigation,
-   BottomNavigationAction,
- }
-  from "@material-ui/core";
-
-  import HomeIcon from '@material-ui/icons/Home';
-  import Text from './../components/containers/Text'
-  
-
-
-const usestayles = makeStyles({
-  btn: {
-    fontSize: 40,
-    backgroundColor: "red"
-  }
-})
-
-export default function Home(){
-  const classes = usestayles()
-  return (
-    <div >   
-      <Typography 
-      variant="h2"
-      >
-        Typography
-      </Typography>
-      <Button variant="submit" 
-      className={classes.btn}
-      onClick={() => console.log('Player')}
-      >
-        BUTTOn SUBMIT
-      </Button>
-      <ButtonGroup color="secondary" variant="cotained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-
-      <br></br>
-      <br></br>
-      < Paper>Paper</Paper>
-      <HomeIcon></HomeIcon>
-      <Text text="sas"></Text>
+import  React from 'react'
+import Drawer from '@material-ui/core/Drawer'
+import { Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 
  
+const drawerWidth = 240;
+const useStyles = makeStyles({
+    drawer :{
+        width: drawerWidth     
+    }
 
-    </div>
-   
-  )
+})
+
+export default function NavigationMenu(){
+    const classes = useStyles()
+    return(
+        <div>
+            <h1>Welcome to Hoem page</h1>
+          
+        </div>
+    )
 }

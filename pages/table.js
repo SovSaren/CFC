@@ -35,11 +35,21 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">grade</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">1</TableCell>
+            <TableCell align="right">2</TableCell>
+            <TableCell align="right">3</TableCell>
+            <TableCell align="right">4</TableCell>
+            <TableCell align="right">5</TableCell>
+            <TableCell align="right">6</TableCell>
+            <TableCell align="right">7</TableCell>
+            <TableCell align="right">8</TableCell>
+            <TableCell align="right">9</TableCell>
+            <TableCell align="right">10</TableCell>
+            <TableCell align="right">11</TableCell>
+            <TableCell align="right">12</TableCell>
+            <TableCell align="right">13</TableCell>
+            <TableCell align="right">14</TableCell>
+            <TableCell align="right">15</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

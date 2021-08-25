@@ -43,19 +43,13 @@ function createData(name, sex, date1, date2,
 
 const rows = [
   createData('saren', "M", 'p', null,null, null, 'p', null,null,
-   null,null, null,'p', null, null, null,'p', null, null, null,
-   'p', null, null, null,'p', null,null, null,'p', null, null,
-    null,null, null,'p'),
+   null,null, null,'p', null, null, null,'p'),
 
   createData('Both', "M", 'p', null,null, null, 'p', null,null,
-   null,null, null,'p', null, null, null,null, null, 'p', null,
-   'p', null,null, null,null, null,'p', null,null, null, 'p',
-    null,null, null,'p'),
+   null,null, null,'p', null, null, null,null),
 
   createData('Dyna',"M",   'p', null,null, null, 'p', null,null,
-  null,null, null,'p', null, null, null,null, null, 'p', null,
-  'p', null,null, null,null, null,'p', null,null, null, 'p',
-   null,null, null,'p'),
+  null,null, null,'p', null, null, null,null),
 
   createData('Danit',"F",    'p', null,null, null, 'p', null,null,
   null,null, null,'p', null, null, null,null, null, 'p', null,
@@ -66,6 +60,15 @@ const rows = [
   null,null, null,'p', null, null, null,null, null, 'p', null,
   'p', null,null, null,null, null,'p', null,null, null, 'p',
    null,null, null,'p'),
+   createData('Rati', "F",  'p', null,null, null, 'p', null,null,
+   null,null, null,'p', null, null),
+   createData('Seth', "M",  'p', null,null, null, 'p', null,null,
+   null,null, null,'p', null, null),
+   createData('Pork', "M",  'p', null,null, null, 'p', null,null,
+   null,null, null,'p', null, null),
+   createData(' Neang', "F",  'p', null,null, null, 'p', null,null,
+   null,null, null,'p', null, null),
+   
 ];
 
 export default function BasicTable() {
@@ -99,21 +102,7 @@ export default function BasicTable() {
                         <TableCell align="right">13</TableCell>
                         <TableCell align="right">14</TableCell>
                         <TableCell align="right">15</TableCell>
-                        <TableCell align="right">16</TableCell>
-                        <TableCell align="right">17</TableCell>
-                        <TableCell align="right">18</TableCell>
-                        <TableCell align="right">19</TableCell>
-                        <TableCell align="right">20</TableCell>
-                        <TableCell align="right">21</TableCell>
-                        <TableCell align="right">22</TableCell>
-                        <TableCell align="right">23</TableCell>
-                        <TableCell align="right">24</TableCell>
-                        <TableCell align="right">25</TableCell>
-                        <TableCell align="right">26</TableCell>
-                        <TableCell align="right">27</TableCell>
-                        <TableCell align="right">28</TableCell>
-                        <TableCell align="right">29</TableCell>
-                        <TableCell align="right">30</TableCell>
+                        
                     </TableRow>
                     </TableHead>
                     <TableBody>
@@ -138,21 +127,7 @@ export default function BasicTable() {
                         <TableCell align="right">{row.date13}</TableCell>
                         <TableCell align="right">{row.date14}</TableCell>
                         <TableCell align="right">{row.date15}</TableCell>
-                        <TableCell align="right">{row.date16}</TableCell>
-                        <TableCell align="right">{row.date17}</TableCell>
-                        <TableCell align="right">{row.date18}</TableCell>
-                        <TableCell align="right">{row.date19}</TableCell>
-                        <TableCell align="right">{row.date20}</TableCell>
-                        <TableCell align="right">{row.date21}</TableCell>
-                        <TableCell align="right">{row.date22}</TableCell>
-                        <TableCell align="right">{row.date23}</TableCell>
-                        <TableCell align="right">{row.date24}</TableCell>
-                        <TableCell align="right">{row.date25}</TableCell>
-                        <TableCell align="right">{row.date26}</TableCell>
-                        <TableCell align="right">{row.date27}</TableCell>
-                        <TableCell align="right">{row.date28}</TableCell>
-                        <TableCell align="right">{row.date29}</TableCell>
-                        <TableCell align="right">{row.date30}</TableCell>
+                        
                         
                         </TableRow>
                     ))}

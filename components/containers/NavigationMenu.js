@@ -201,8 +201,10 @@ function NavigationMenu(props) {
                 <div className={classes.toolbar} />
                 {props.children}
             </main>
+            <haede/>
         </div>
     );
+    
 }
 
 NavigationMenu.propTypes = {

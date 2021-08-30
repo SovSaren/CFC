@@ -10,9 +10,10 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 400,
-    marginLeft:'auto',
-    marginRight:'auto'
+    maxWidth: 280,
+    display:'inline-block',
+    marginLeft:30,
+    
   },
 });
 
@@ -22,15 +23,9 @@ export default function ImgMediaCard() {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/images/TEVEAAMRIT.jpg "
-          title="Contemplative Reptile"
-          height="200"
+        <CardMedia style={{height:240,width:300,backgroundSize:'cover',backgroundImage:"url('/images/TEVEAAMRIT.jpg')",}}>
 
-        />
+         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
           THY TEVEAAMRIT

@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     fontSize:80,
     marginLeft:'auto',
     marginRight:'auto',
+
   },
   item1:{
     color:'black',
@@ -29,20 +30,20 @@ const useStyles = makeStyles({
 
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-      className={classes.root}
+   <div>
+         <BottomNavigation
+                     value={value}
+                     onChange={(event, newValue) => {
+                       setValue(newValue);
+                     }}
+                     showLabels
+                     className={classes.root}
     >
-      <BottomNavigationAction   className={styles.item} className={classes.item1}  label="Like" icon={<ThumbUpIcon  style={{fontSize:40}}/>}  />
-      <BottomNavigationAction className={classes.item1} label="Comment" icon={<CommentIcon style={{fontSize:40}} />} />
-      <BottomNavigationAction className={classes.item1} label="Share" icon={<ShareIcon  style={{fontSize:40}} />} />
+      <BottomNavigationAction  className={classes.item1}  label="Like" icon={<ThumbUpIcon  style={{fontSize:40}}/>}  />
     </BottomNavigation>
+   </div>
   );
 }

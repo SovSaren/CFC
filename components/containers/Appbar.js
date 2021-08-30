@@ -38,8 +38,8 @@ export default function ButtonAppBar({text}) {
           
 
           <Typography>
-                    <Link href="/coment" style={{color:'black',width:50,height:50,}}>
-                      <  ChatBubbleTwoToneIcon style={{color:' #042453',width:40,height:40,}}></ ChatBubbleTwoToneIcon>
+                    <Link href="/coment" style={{color:'red',width:50,height:50,}}>
+                      <  ChatBubbleTwoToneIcon style={{color:'#4492eb',width:50,height:50}}></ ChatBubbleTwoToneIcon>
                     </Link>
                 </Typography>
          

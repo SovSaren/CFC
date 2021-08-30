@@ -45,9 +45,9 @@ export default function ChooseYears() {
     <Grid container direction="column" alignItems="center" style={{width:100}}>
       <Grid item xs={12} style={{width:100}}>
         <ButtonGroup variant="contained" color="white" ref={anchorRef} aria-label="split button">
-          <Button onClick={handleClick} color="white" style={{width:350,height:50,fontSize:20,}}>{options[selectedIndex]}</Button>
+          <Button onClick={handleClick} color="white" style={{width:350,height:50,fontSize:20,backgroundColor:'#4492eb'}}>{options[selectedIndex]}</Button>
           <Button
-            color="white"
+            style={{backgroundColor:'#4492eb'}}
             size="small"
             aria-controls={open ? 'split-button-menu' : undefined}
             aria-expanded={open ? 'true' : undefined}
@@ -74,7 +74,7 @@ export default function ChooseYears() {
                         key={option}
                         disabled={index === 13}
                         selected={index === selectedIndex}
-                        style={{backgroundColor:'rgba(167, 250, 246, 0.986)',width:250,}}
+                        style={{width:250,}}
                         onClick={(event) => handleMenuItemClick(event, index)}
                       >
                         {option}

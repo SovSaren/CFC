@@ -22,6 +22,7 @@ import Paper from '@material-ui/core/Paper'
 import Avatar from '@material-ui/core/Avatar';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone';
+import Mantis from './../persentation/text/Mantis Rumble_PersonalUseOnly';
 
 
 
@@ -86,32 +87,32 @@ function NavigationMenu(props) {
    
         {
             path: '/schooltimeline',
-            icon: <AccountBalanceIcon  />,
-            name: 'School TimeLine'
+            icon: <AccountBalanceIcon  style={{width:40,height:30,}}/>,
+            name: 'School TimeLine '
         },
         {
             path: '/classtimeline',
-            icon: <TodayIcon />,
+            icon: <TodayIcon style={{width:40,height:30,}}/>,
             name: 'Class TimeLine',
         },
         {
             path:'/teachingandlearning',
-            icon: <MenuBookIcon/>,
+            icon: <MenuBookIcon style={{width:40,height:30,}}/>,
             name: 'Teaching and Learning',
         },
         {
             path:'/reaultevaluattion',
-            icon: <KeyboardIcon />,
+            icon: <KeyboardIcon style={{width:40,height:30,}}/>,
             name: 'Reault Evaluattion ',
         },
         {
             path:'/attendence',
-            icon: <AssignmentTurnedInIcon />,
+            icon: <AssignmentTurnedInIcon style={{width:40,height:30,}}/>,
             name: 'Attendence',
         },
         {
             path:'/permisson',
-            icon: <PanToolIcon />,
+            icon: <PanToolIcon style={{width:40,height:30,}} />,
             name: 'Permisson',
         },
     ]
@@ -140,8 +141,8 @@ function NavigationMenu(props) {
 
                     <Link href={page.path}  > 
                         <ListItem  className={classes.texts}  button key={index} >
-                        <ListItemIcon style={{color: 'blue',height:50,}}>{page.icon}</ListItemIcon>
-                        <ListItemText style={{height:50,}} primary={page.name} />
+                        <ListItemIcon style={{color: 'blue',height:20,}}>{page.icon}</ListItemIcon>
+                        <ListItemText style={{height:50}}><p style={{fontSize:20}}><Mantis>{page.name}</Mantis></p></ListItemText>
                         </ListItem>
                     </Link>
                 ))}
@@ -150,7 +151,7 @@ function NavigationMenu(props) {
             </Paper>
             <Link href="/form/loginPage" > 
                         <ListItem  button  style={{color:'red'}}>
-                        <ListItemIcon style={{color: 'blue'}}><ExitToAppTwoToneIcon  /></ListItemIcon>
+                        <ListItemIcon style={{color: 'blue',}}><ExitToAppTwoToneIcon style={{width:40,height:35,}} /></ListItemIcon>
                         <ListItemText primary="Logout"/>
                         </ListItem>
                     </Link>

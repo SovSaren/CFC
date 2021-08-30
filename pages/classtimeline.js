@@ -49,7 +49,7 @@ export default function BasicTable() {
   return (
       <diV className ={classes.root}>
         <ButtonAppBar text="Class Timline"></ButtonAppBar>
-        <div style={{float: "left" ,marginBottom:30,}}>
+        <div style={{float: "left",paddingBottom:30}}>
             <ChooseClass ></ChooseClass>
            
        </div>

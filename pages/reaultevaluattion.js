@@ -62,10 +62,9 @@ export default function CustomizedTables() {
           <ButtonAppBar text="Reault evaluattion"></ButtonAppBar>
                 <div style={{width:'80%',marginLeft:'auto',marginRight:'auto'}}>
             
-                  <div style={{float: "left",marginBottom:10}}>
-                  <Paper >
+                  <div style={{float: "left",paddingBottom:40}}>
+                 
                   <ChooseClass ></ChooseClass> 
-                  </Paper>
                   </div>
                   <div style={{float: "left",marginBottom:10,marginLeft:340,}}>
                   <Paper>
@@ -77,9 +76,9 @@ export default function CustomizedTables() {
             
       
  
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper}  >
           
-          <Table className={classes.table} aria-label="customized table">
+          <Table className={classes.table}  aria-label="customized table">
             <TableHead>
               <TableRow >
               <StyledTableCell  >    
@@ -143,7 +142,7 @@ export default function CustomizedTables() {
         <TextField {...params} label="Search your Name" variant="outlined"  />
       )}
     /> 
-    </StyledTableCell>
+    </StyledTableCell >
                 <StyledTableCell align="right">Attensdance</StyledTableCell>
                 <StyledTableCell align="right">Activity</StyledTableCell>
                 <StyledTableCell align="right">Exam</StyledTableCell>

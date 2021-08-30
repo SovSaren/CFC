@@ -39,7 +39,7 @@ export default function Login(){
                         label="Remember me"
                 >
                 </FormControlLabel>
-                <Button type="submit" color="blue" color='paimary' variant='contained' fullWidth >Sign In</Button>
+                <Button type="submit" variant='contained' color='primary' fullWidth Link href='/schooltimeline' >Sign In</Button>
                 <Typography>
                     <Link href="#">
                         Forgot password ?

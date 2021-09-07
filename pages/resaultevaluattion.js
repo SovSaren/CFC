@@ -1,4 +1,4 @@
-
+import React  from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,10 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import ChooseClass from './../components/persentation/ButtonChooseClass'
-import ChooseYears from './../components/persentation/buttoChoseYears'
-import FreeSoloCreateOption from './../components/persentation/buttonSearch'
-import ButtonAppBar from './../components/containers/Appbar'
+import ChooseClass from '../components/persentation/ButtonChooseClass'
+import ChooseYears from '../components/persentation/buttoChoseYears'
+import FreeSoloCreateOption from '../components/persentation/buttonSearch'
+import ButtonAppBar from '../components/containers/Appbar';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 
@@ -61,21 +61,16 @@ export default function CustomizedTables() {
        <div>
           <ButtonAppBar text="Reault evaluattion"></ButtonAppBar>
                 <div style={{width:'80%',marginLeft:'auto',marginRight:'auto'}}>
-            
-                  <div style={{float: "left",paddingBottom:40}}>
-                 
-                  <ChooseClass ></ChooseClass> 
-                  </div>
-                  <div style={{float: "left",marginBottom:10,marginLeft:340,}}>
-                  <Paper>
-                  <ChooseYears ></ChooseYears> 
-                  </Paper>
-                  </div>
+                    <div style={{float: "left",paddingBottom:40}}>
+                      <ChooseClass ></ChooseClass> 
+                    </div>
+                    <div style={{float: "left",marginBottom:10,marginLeft:340,}}>
+                      <Paper>
+                        <ChooseYears ></ChooseYears> 
+                      </Paper>
+                    </div>
                   </div>
             
-            
-      
- 
         <TableContainer component={Paper}  >
           
           <Table className={classes.table}  aria-label="customized table">

@@ -1,71 +1,52 @@
-import React, { useRef, useState } from "react";
-import styles from './../styles/register.module.css'
-import { Grid,Avatar,TextField,Button,} from '@material-ui/core';
-import { FormControlLabel } from '@material-ui/core';
-import { Checkbox } from '@material-ui/core';
-import AlternateEmailOutlinedIcon from '@material-ui/icons/AlternateEmailOutlined';
-import { Radio } from '@material-ui/core';
-import { RadioGroup } from '@material-ui/core';
-import { FormControl } from '@material-ui/core';
-import { FormLabel } from '@material-ui/core';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { red } from '@material-ui/core/colors';
+import Image from 'next/image'
+import { AUGText } from '../components/persentation/texts';
+import {Button, Typography} from '@material-ui/core';
+import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
+import styles from './../styles/choosejob.module.css';
 import Mantis from './../components/persentation/text/Mantis Rumble_PersonalUseOnly';
+import SchoolIcon from '@material-ui/icons/School';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import Link from 'next/dist/client/link';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { Label } from '@material-ui/icons';
 
-const Register = () => {
+const useStyles = makeStyles((theme) => ({
+  item :{
+    color:'blue',   
+    marginLeft:100,
+    marginRight:100,
+    fontSize:100,
+  },
+  
+}));
+  
 
-    return(
-        <div className={styles.body}>
-            <Grid className={styles.form}>
-             <Grid  style={{marginLeft:50,marginRight:50,}} >
-                    <div align='center'>
-                        <Avatar  style={{width:60,height:60,backgroundColor:'green'}}>
-                            < AlternateEmailOutlinedIcon style={{width:60,height:60}} />
-                        </Avatar>  
-                        < p style={{fontSize:20}}><Mantis> Sign Up</Mantis></p>
-                        <p ><Mantis>Plase fill this form to create an accound !</Mantis></p>
-                    </div>
-                    <form>
-                        <TextField  fullWidth label='Name' placeholder="Enter your name" required/>
-                        <TextField  fullWidth label='Email' placeholder="Enter your email" required/>
-                        <TextField  fullWidth label='Phome Number'placeholder="Enter your phone number" required/>
-                        <TextField  
-                        fullWidth label='Password' 
-                        placeholder="Enter your name"
-                        type='password'
-                        id="password"
-                        required
-                        />
-                        <TextField  
-                        fullWidth
-                        label='Confirm Password'
-                        type='password'
-                        placeholder="Enter your name"
-                        id="confirm_password"
-                        required
-                        />
-                        <FormControl component = "fieldset" style={{marginTop:20,}}>
-                            <FormLabel component="leged">Gender</FormLabel>
-                            <RadioGroup aria-label="gender" name="gender" style={{display:'initial'}}>
-                                <FormControlLabel value="female" control={<Radio/>} label="Female"/>
-                                <FormControlLabel value="male" control={<Radio/>} label="Male"/>
-                                <FormControlLabel value="other" control={<Radio/>} label="Other"/>
-                            </RadioGroup>
-                            <FormControlLabel 
-                                control={
-                                    <Checkbox
-                                    name="checkedB"
-                                    color="primary"
-                                    >
-                                    </Checkbox>
-                                }
-                                label="I accept the terms and conditions."
-                        >
-                        </FormControlLabel>
-                        </FormControl>
-                        <Button type='submit' variant='contained' color='primary' fullWidth Link href='/form/loginPage'>SIGN UP</Button>
-                    </form>
-                </Grid>
-            </Grid> 
+export default function NestedGrid() {
+  const classes = useStyles();
+    return (
+      <div className={styles.body}>
+        <Grid className={styles.form}>
+        <Grid  style={{marginLeft:50,marginRight:50,}} >
+          <Typography  style={{textAlign:'center',paddingTop:30,fontSize:60}}>
+            <Mantis>Create Account</Mantis>
+          </Typography>
+        </Grid>
+        <p style={{textAlign:'center',marginTop:-30,fontSize:30}}>welcome to (cfc)study online class</p>
+        <div className={styles.icons} >
+            <BottomNavigation showLabels style={{marginTop:100,backgroundColor:'rgb(177, 235, 240)'}}>
+              <BottomNavigationAction className={classes.item}  label="STUDENT" Link href="/register" icon={<AssignmentIndIcon style={{width:100,height:100,}}/>} /> 
+              <BottomNavigationAction className={classes.item}   label="TEACHER" icon={<SchoolIcon style={{width:100,height:100,}}/>} /> 
+            </BottomNavigation>
         </div>
-    )
+
+        </Grid>
+        
+      </div>
+  );
 }
-export default Register;

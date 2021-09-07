@@ -1,5 +1,16 @@
 .grid{
    
     padding-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-};
+}
+.btn{
+
+    padding: 10px;
+    outline: olivedrab;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(to right,#79ffe2,#badc58);
+}
+.btn:hover{
+    box-shadow: 1px 1px 10px #cfa8ad;
+    background-image: linear-gradient(to rigth,#badc58,#79ffe2);
+}

@@ -4,7 +4,7 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 30vh;
 
     
@@ -22,4 +22,16 @@
 .form h1{
     text-align: center;
     
+}
+.btn{
+
+    padding: 10px;
+    outline: olivedrab;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(to right,#6073e0,#f184df);
+}
+.btn:hover{
+    box-shadow: 1px 1px 10px #cfa8ad;
+    background-image: linear-gradient(to rigth,#badc58,#79ffe2);
 }

@@ -101,7 +101,7 @@ function NavigationMenu(props) {
             name: 'Teaching and Learning',
         },
         {
-            path:'/reaultevaluattion',
+            path:'/resaultevaluattion',
             icon: <KeyboardIcon style={{width:40,height:30,}}/>,
             name: 'Reault Evaluattion ',
         },
@@ -113,7 +113,7 @@ function NavigationMenu(props) {
         {
             path:'/permisson',
             icon: <PanToolIcon style={{width:40,height:30,}} />,
-            name: 'Permisson',
+            name: 'Permission',
         },
     ]
 
@@ -149,7 +149,7 @@ function NavigationMenu(props) {
                    
 
             </Paper>
-            <Link href="/form/loginPage" > 
+            <Link href="loginpage" > 
                         <ListItem  button  style={{color:'red'}}>
                         <ListItemIcon style={{color: 'blue',}}><ExitToAppTwoToneIcon style={{width:40,height:35,}} /></ListItemIcon>
                         <ListItemText primary="Logout"/>

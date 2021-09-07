@@ -26,12 +26,12 @@ export default function SimpleAccordion() {
   const navs = [
    
     {
-        path: '/schooltimeline',
+        path: '/unit/lesson1',
         icon: <RestoreIcon   />,
-        name: 'How to create Google account or'
+        name: 'How to create Google account or Gmail'
     },
     {
-        path: '/classtimeline',
+        path: '/unit/lesson2',
         icon: <RestoreIcon/>,
         name: 'Introduction to Google Drive',
     },
@@ -41,14 +41,14 @@ export default function SimpleAccordion() {
 const navs2 = [
    
   {
-      path: '/schooltimeline',
+      path: '/unit2/lesson1',
       icon: <RestoreIcon   />,
-      name: 'Attaching file in Gmail'
+      name: 'How to attach files in gmail'
   },
   {
-      path: 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80',
+      path: '/unit2/lesson2',
       icon: <RestoreIcon/>,
-      name: 'Create and sending Gmail',
+      name: '	Create and sending Gmail',
   },
  
 ]
@@ -61,7 +61,7 @@ const navs2 = [
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Unit 1 : Connecting to the World</Typography>
+          <Typography className={classes.heading}>  Unit 1: Lesson 1</Typography>
         </AccordionSummary>
 
             {navs.map((page, index) => (

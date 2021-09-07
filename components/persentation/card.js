@@ -31,14 +31,13 @@ export default function ImgMediaCard() {
           THY TEVEAAMRIT
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            , with over 6,000 species, ranging
-            across all continents except Antarctica
+           He is an ICT teacher at Hun Sen Prasat Bakong High School.He teaches 7th , 8th and 9th grade.
           </Typography>
           <Typography variant="body2" color="blank" component="p">
            Contact: 095 30 37 54
           </Typography>
           <Typography variant="body2" color="blank" component="p">
-           Email: seihatith@gmail.com
+           Email: thyteveaamrit.com
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -46,7 +45,6 @@ export default function ImgMediaCard() {
         <Button size="small" color="primary">
           Learn more
         </Button>
-
       </CardActions>
     </Card>
   );

@@ -4,18 +4,15 @@ import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-
   return (
     <div>
       {
-        router.pathname === '/form/loginPage' || router.pathname === '/' ?
+        router.pathname === '/loginpage' || router.pathname === '/register' || router.pathname === '/'  ?
           <Component {...pageProps} /> :
           <NavigationMenu>
             <Component {...pageProps} />
           </NavigationMenu>
       }
-
-
     </div>
   )
 }

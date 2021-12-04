@@ -1,52 +1,113 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import { red } from '@material-ui/core/colors';
-import Image from 'next/image'
-import { AUGText } from '../components/persentation/texts';
-import {Button, Typography} from '@material-ui/core';
-import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
-import styles from './../styles/choosejob.module.css';
-import Mantis from './../components/persentation/text/Mantis Rumble_PersonalUseOnly';
-import SchoolIcon from '@material-ui/icons/School';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import Link from 'next/dist/client/link';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import { Label } from '@material-ui/icons';
+import React, { useRef, useState } from "react";
+import styles from './../styles/register.module.css';
+import router, { useRouter } from "next/router";
+import { Grid,Avatar,TextField,Button,} from '@material-ui/core';
+import { FormControlLabel } from '@material-ui/core';
+import { Checkbox } from '@material-ui/core';
+import AlternateEmailOutlinedIcon from '@material-ui/icons/AlternateEmailOutlined';
+import { Radio } from '@material-ui/core';
+import { RadioGroup } from '@material-ui/core';
+import { FormControl } from '@material-ui/core';
+import { FormLabel } from '@material-ui/core';
+import { Typography } from "@material-ui/core";
+import { Link } from "@material-ui/core";
+import Mantis from '../components/persentation/text/Mantis Rumble_PersonalUseOnly';
+import {fireAuth} from "../services/firebase";
 
-const useStyles = makeStyles((theme) => ({
-  item :{
-    color:'blue',   
-    marginLeft:100,
-    marginRight:100,
-    fontSize:100,
-  },
-  
-}));
-  
+const Register = () => {
+    const [error, setError] = React.useState("");
+    const handleCreateUser = (e) =>{
+        e.preventDefault();
+       const {email,password} = e.target.elements;
+       fireAuth.createUserWithEmailAndPassword(email.value,password.value)
+       .then((res) =>{
+           router.push('/loginpage')
+       }).catch((err)=>{
+           console.error(err)
+           setError(err.message);
+       })
+    }
 
-export default function NestedGrid() {
-  const classes = useStyles();
-    return (
-      <div className={styles.body}>
-        <Grid className={styles.form}>
-        <Grid  style={{marginLeft:50,marginRight:50,}} >
-          <Typography  style={{textAlign:'center',paddingTop:30,fontSize:60}}>
-            <Mantis>Create Account</Mantis>
-          </Typography>
-        </Grid>
-        <p style={{textAlign:'center',marginTop:-30,fontSize:30}}>welcome to (cfc)study online class</p>
-        <div className={styles.icons} >
-            <BottomNavigation showLabels style={{marginTop:100,backgroundColor:'rgb(177, 235, 240)'}}>
-              <BottomNavigationAction className={classes.item}  label="STUDENT" Link href="/register" icon={<AssignmentIndIcon style={{width:100,height:100,}}/>} /> 
-              <BottomNavigationAction className={classes.item}   label="TEACHER" icon={<SchoolIcon style={{width:100,height:100,}}/>} /> 
-            </BottomNavigation>
+    return(
+        <div className={styles.body} onSubmit={handleCreateUser}>
+            <Grid className={styles.form}>
+             <Grid  style={{marginLeft:50,marginRight:50,}} >
+                    <div align='center'>
+                        <Avatar  style={{width:60,height:60,backgroundColor:'green',marginTop:-10,}}>
+                            < AlternateEmailOutlinedIcon style={{width:60,height:60}} />
+                        </Avatar>  
+                        < p style={{fontSize:20}}><Mantis> Sign Up</Mantis></p>
+                        <p ><Mantis>Plase fill this form to create an accound !</Mantis></p>
+                    </div>
+                    <form >
+                        <TextField  
+                            fullWidth 
+                            label='Name' 
+                            placeholder="Enter your name" 
+                            required/>
+                        <TextField  
+                            fullWidth 
+                            label='Email' 
+                            placeholder="Enter your email" 
+                            name="email"
+                            required/>
+                        <TextField 
+                            fullWidth 
+                            label='Phome Number' 
+                            placeholder="Enter your phone number" 
+                            required/>
+                        <TextField  
+                            fullWidth label='Password' 
+                            placeholder="Enter your name"
+                            type='password'
+                            id="password"
+                            name="password"
+                            required
+                            />
+                        <Typography color="secondary">{error}</Typography>
+                        <FormControl component = "fieldset" style={{marginTop:20,}}>
+                            <FormLabel component="leged">Gender</FormLabel>
+                            <RadioGroup aria-label="gender" name="gender" style={{display:'initial'}}>
+                                <FormControlLabel value="female" control={<Radio/>} label="Female"/>
+                                <FormControlLabel value="male" control={<Radio/>} label="Male"/>
+                                <FormControlLabel value="other" control={<Radio/>} label="Other"/>
+                            </RadioGroup>
+                            <FormControlLabel 
+                                control={
+                                    <Checkbox
+                                    name="checkedB"
+                                    color="primary"
+                                    >
+                                    </Checkbox>
+                                }
+                                label="I accept the terms and conditions."
+                        >
+                        </FormControlLabel>
+                        </FormControl>
+                        <Button 
+                            type="submit" 
+                            fullWidth 
+                            style={{fontSize:23}}
+                            className={styles.btn } >
+                            <Mantis >Sign Up</Mantis>
+                        </Button>
+                        <Typography style={{marginTop:10}}>
+                        if you have an accounnt plase.
+                        <Link href="/loginpage">
+                           Sign In
+                        </Link>
+                        </Typography>
+                    </form>
+
+                </Grid>
+            </Grid> 
         </div>
-
-        </Grid>
-        
-      </div>
-  );
+    )
 }
+export default Register;
+
+
+
+
+
+

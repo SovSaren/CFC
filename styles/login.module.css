@@ -12,12 +12,29 @@
     background-color: white;
     width: 40%;
     height: auto;
+    padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
 .form h1{
     text-align: center;
     
+}
+.grid{
+   
+    padding-top: 20px;
+}
+.btn{
+
+    padding: 10px;
+    outline: olivedrab;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(to right,#79ffe2,#badc58);
+}
+.btn:hover{
+    box-shadow: 1px 1px 10px #cfa8ad;
+    background-image: linear-gradient(to rigth,#badc58,#79ffe2);
 }

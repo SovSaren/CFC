@@ -23,6 +23,8 @@ import Avatar from '@material-ui/core/Avatar';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone';
 import Mantis from './../persentation/text/Mantis Rumble_PersonalUseOnly';
+import router, { useRouter } from "next/router";
+import { fireAuth } from '../../services/firebase';
 
 
 
@@ -78,11 +80,20 @@ function NavigationMenu(props) {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
 
+    const [mobileOpen, setMobileOpen] = React.useState(false);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    const handleSignOut =()=>{
+        fireAuth.signOut()
+        .then(()=>{
+            router.push('../../../loginpage')
+        }).catch(()=>{
+            console.error(err)
+        })
+    }
+
     const navs = [
    
         {
@@ -149,12 +160,13 @@ function NavigationMenu(props) {
                    
 
             </Paper>
-            <Link href="loginpage" > 
-                        <ListItem  button  style={{color:'red'}}>
-                        <ListItemIcon style={{color: 'blue',}}><ExitToAppTwoToneIcon style={{width:40,height:35,}} /></ListItemIcon>
-                        <ListItemText primary="Logout"/>
-                        </ListItem>
-                    </Link>
+                
+                            <ListItem  button  style={{color:'red'}}>
+                                <ListItemIcon style={{color: 'blue',}}><ExitToAppTwoToneIcon style={{width:40,height:35,}} /></ListItemIcon>
+                                <ListItemText  onClick={handleSignOut}>Logout</ListItemText>
+                                
+                            </ListItem>
+
             </List>
 
         </div>

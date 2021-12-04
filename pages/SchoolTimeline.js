@@ -11,6 +11,8 @@ import SimpleBottomNavigation from './../components/persentation/buttonlikeshare
 import ButtonAppBar from './../components/containers/Appbar';
 import { red } from '@material-ui/core/colors';
 import { textAlign } from '@material-ui/system';
+import { fireAuth } from "../services/firebase";
+import router, { useRouter } from "next/router";
 
 
 
@@ -41,6 +43,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CSSGrid() {
   const classes = useStyles();
+  const handleSignOut =()=>{
+    fireAuth.signOut()
+    .then(()=>{
+        router.push('/')
+    }).catch(()=>{
+        console.error(err)
+    })
+}
 
   return (
     <div> 

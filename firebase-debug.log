@@ -1,0 +1,50 @@
+[debug] [2021-09-27T23:41:54.737Z] ----------------------------------------------------------------------
+[debug] [2021-09-27T23:41:54.739Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\STUDENT\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-09-27T23:41:54.739Z] CLI Version:   9.17.0
+[debug] [2021-09-27T23:41:54.739Z] Platform:      win32
+[debug] [2021-09-27T23:41:54.739Z] Node Version:  v12.19.0
+[debug] [2021-09-27T23:41:54.740Z] Time:          Tue Sep 28 2021 06:41:54 GMT+0700 (Indochina Time)
+[debug] [2021-09-27T23:41:54.740Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-09-27T23:41:54.809Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-09-27T23:41:54.809Z] > authorizing via signed-in user (sovsaren98@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\cfc-study-online
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using cfc-study-online. 
+[debug] [2021-09-27T23:42:17.060Z] > refreshing access token with scopes: []
+[debug] [2021-09-27T23:42:17.060Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-27T23:42:25.172Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 27 Sep 2021 23:42:15 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-27T23:42:25.202Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cfc-study-online [none]
+[debug] [2021-09-27T23:42:40.163Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cfc-study-online 200
+[debug] [2021-09-27T23:42:40.163Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cfc-study-online {"projectId":"cfc-study-online","projectNumber":"41346380900","displayName":"cfc-study-online","name":"projects/cfc-study-online","resources":{"hostingSite":"cfc-study-online"},"state":"ACTIVE"}
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at D:\cfc-study-online 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=294331501&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...

@@ -16,15 +16,19 @@ import {fireAuth} from "../services/firebase";
 
 const Register = () => {
     const [error, setError] = React.useState("");
+    const [loading,setLoading]=React.useState(false);
     const handleCreateUser = (e) =>{
         e.preventDefault();
+        setLoading(true);
        const {email,password} = e.target.elements;
        fireAuth.createUserWithEmailAndPassword(email.value,password.value)
        .then((res) =>{
-           router.push('/loginpage')
+           router.push('/loginpage');
+           setLoading(false)
        }).catch((err)=>{
            console.error(err)
            setError(err.message);
+           setLoading(false)
        })
     }
 
@@ -89,7 +93,7 @@ const Register = () => {
                             fullWidth 
                             style={{fontSize:23}}
                             className={styles.btn } >
-                            <Mantis >Sign Up</Mantis>
+                            <Mantis >{loading? "Loading...":"Sign Up"}</Mantis>
                         </Button>
                         <Typography style={{marginTop:10}}>
                         if you have an accounnt plase.

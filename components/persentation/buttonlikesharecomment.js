@@ -59,6 +59,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import CommentIcon from '@material-ui/icons/Comment';
 
+
 const useStyles = makeStyles({
   root: {
     width: "100%",
@@ -89,8 +90,8 @@ export default function SimpleBottomNavigation() {
         className={classes.root}
       >
         <BottomNavigationAction className={classes.item} label="Like " icon={<ThumbUpIcon style={{width:70,height:40,}}/>} />
-        <BottomNavigationAction className={classes.item} label="Dislike" icon={<ThumbDownIcon style={{width:70,height:40,}}/>} />
         <BottomNavigationAction className={classes.item} label="Comment" icon={<CommentIcon style={{width:70,height:40,}} />} />
+        <BottomNavigationAction className={classes.item} label="Dislike" icon={<ShareIcon style={{width:70,height:40,}}/>} />
       </BottomNavigation>
     </div>
   );

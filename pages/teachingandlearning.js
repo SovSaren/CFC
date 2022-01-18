@@ -90,12 +90,12 @@ export default function teachinglearning() {
                 </Card>
                 <Card className={classes.root}>
                 <CardActionArea>
-                    <CardMedia style={{height:240,width:300,backgroundSize:'cover',backgroundImage:"url('/images/TEVEAAMRIT.jpg')",}}>
+                    <CardMedia style={{height:240,width:300,backgroundSize:'cover',backgroundImage:"url('')",}}>
 
                     </CardMedia>
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                    THY TEVEAAMRIT
+                    Rat Pearit
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                     He is an ICT teacher at Hun Sen Prasat Bakong High School.He teaches 7th , 8th and 9th grade.

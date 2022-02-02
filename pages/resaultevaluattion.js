@@ -58,9 +58,8 @@ export default function CustomizedTables() {
     name: ''
   });
   return (
-       <div>
-          <ButtonAppBar text="Reault evaluattion"></ButtonAppBar>
-                <div style={{width:'80%',marginLeft:'auto',marginRight:'auto'}}>
+       <div style={{width:900}}> 
+                <div style={{width:'100%',marginLeft:'auto',marginRight:'auto',marginTop:30}}>
                     <div style={{float: "left",paddingBottom:40}}>
                       <ChooseClass ></ChooseClass> 
                     </div>

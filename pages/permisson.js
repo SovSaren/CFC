@@ -11,20 +11,18 @@ import ButtonAppBar from '../components/containers/Appbar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '60ch',
-      
-    },
-    
+    width:800,
+    marginLeft:'auto',
+    marginRight:'auto',
 
   },
   all:{
-    height:"90%",
-    width:"100%",
     marginTop:30,
 
   },
+  space:{
+    marginTop:20,
+  }
 
 }));
 
@@ -37,80 +35,67 @@ export default function StateTextFields() {
 
   return (
     
-<Paper className={classes.all}>
-<ButtonAppBar text="Permission"></ButtonAppBar>
-  <form className={classes.root} noValidate autoComplete="off">
-  
-      
-       
-       <TextField
-          id="filled-firstname"
-          label=" First Name"
-          defaultValue="    "
-          variant="filled"
-        />
+    <Paper style={{marginTop:30,paddingBottom:40,width:900}}>
+    <form className={classes.root} noValidate autoComplete="off">
         <TextField
-          id="filled-firstname"
-          label=" Last Name"
-          defaultValue="   "
-          variant="filled"
-        />
-       
-      
-  <TextField
-    id="date"
-    label="Birthday"
-    type="date"
-    defaultValue="2017-05-24"
-    className={classes.textField}
-    InputLabelProps={{
-      shrink: true,
-    }}
-  />
-   <TextField
-          id="filled-firstname"
-          label=" Sex"
-          defaultValue="   "
-          variant="filled"
-        />
-     
-        
-  <TextField
-    id="datetime-local"
-    label="Start time"
-    type="datetime-local"
-    defaultValue="2017-05-24T10:30"
-    className={classes.textField}
-    InputLabelProps={{
-      shrink: true,
-    }}
-  />
+            label=" User Name"
+            placeholder="Enter your phone name" 
+            fullWidth 
+            required
+            className={classes.space}
+          />
+          <TextField
+            id="filled-firstname"
+            label=" Class"
+            fullWidth 
+            required
+            className={classes.space}
+          />
+            <TextField
+            id="date"
+            label="Birthday"
+            required
+            type="date"
+            defaultValue="2017-05-24"
+            style={{width:240,marginTop:30}}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+            <TextField
+            id="datetime-local"
+            label="Start time"
 
-
-<TextField
-    id="datetime-local"
-    label="End time"
-    type="datetime-local"
-    defaultValue="2017-05-24T10:30"
-    className={classes.textField}
-    InputLabelProps={{
-      shrink: true,
-    }}
-  />
-</form>
-         
-
-        <div style={{width:"123ch"}}> 
-        <TextField
-          label="reason"
-          defaultValue=""
-          variant="filled"
-          fullWidth
-        />
-        </div>
-     
-    <Button variant="contained" color="primary"  style={{marginTop:30,marginLeft:400,width:200}} disableElevation>Submit</Button>
-    
-    </Paper>
+            required
+            type="datetime-local"
+            defaultValue="2017-05-24T10:30"
+            style={{marginLeft:40,width:240,marginTop:30}}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField
+            style={{marginLeft:40,width:240,marginTop:30}}
+            id="datetime-local"
+            label="End time"
+            required
+            type="datetime-local"
+            defaultValue="2017-05-24T10:30"
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField
+            label="reason"
+            required
+            fullWidth
+            className={classes.space}
+          />
+          <Button variant="contained"  className={classes.space} color="primary" fullWidth  >Submit</Button>
+     </form>      
+  </Paper>   
   );
 }

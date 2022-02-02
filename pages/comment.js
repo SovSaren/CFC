@@ -1,10 +1,8 @@
   import React from 'react';
   import styles from './../styles/coment.module.css'
   import { makeStyles } from '@material-ui/core/styles';
-  import TextField from '@material-ui/core/TextField';
   import ButtonAppBar from './../components/containers/Appbar'
   import emailjs from 'emailjs-com';
-  import {ToastProvider, useToasts} from 'react-toast-notifications';
   import { Paper } from '@material-ui/core';
   import { Button } from '@material-ui/core';
   import Mantis from './../components/persentation/text/Mantis Rumble_PersonalUseOnly';

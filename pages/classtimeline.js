@@ -9,16 +9,12 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ChooseClass from './../components/persentation/ButtonChooseClass'
 import ButtonAppBar from './../components/containers/Appbar'
+import ChooseYears from '../components/persentation/buttoChoseYears'
 
 const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
   root :{
     marginTop:20,
-    width:'90%',
-    marginLeft:'auto',
-    marginRight:'auto'
+    width:'300'
 
     
   }
@@ -48,11 +44,16 @@ export default function BasicTable() {
 
   return (
       <diV className ={classes.root}>
-        <ButtonAppBar text="Class Timline"></ButtonAppBar>
-        <div style={{float: "left",paddingBottom:30}}>
-            <ChooseClass ></ChooseClass>
-           
-       </div>
+                <div style={{width:'100%',marginLeft:'auto',marginRight:'auto',marginTop:30}}>
+                    <div style={{float: "left",paddingBottom:40}}>
+                      <ChooseClass ></ChooseClass> 
+                    </div>
+                    <div style={{float: "left",marginBottom:10,marginLeft:340,}}>
+                      <Paper>
+                        <ChooseYears ></ChooseYears> 
+                      </Paper>
+                    </div>
+                  </div>
                 <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>

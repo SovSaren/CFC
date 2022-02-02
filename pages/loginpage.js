@@ -38,7 +38,7 @@ export default function Logins(){
        })
     }
     const handleForgotPassword = (e) => {
-        e.preventDefault;
+        e.preventDefault();
         setLoading(true);
         const {email} = e.target.elements;
         fireAuth.sendPasswordResetEmail(email.value)
@@ -71,7 +71,7 @@ export default function Logins(){
                             required/>
                         <TextField  
                             fullWidth label='Password' 
-                            placeholder="Enter your name"
+                            placeholder="Enter your Password"
                             type='password'
                             id="password"
                             name="password"

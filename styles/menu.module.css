@@ -5,3 +5,20 @@
 .texts{
     font-size: 50px;
 }
+.btn{
+    
+
+    background-color: brown;
+    
+}
+.gbtn{
+    margin-left: 600px;
+    float: right;
+    
+}
+.toolbar{
+    width: 800vh;
+    padding-left: 200px;
+    text-align: center;
+    background-color: rgb(105, 147, 202);
+}

@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 export default function teachinglearning() {
     const classes = useStyles();
     return (
-        <div style={{width: `100%`}} >
+        <div style={{width: `100%`,marginLeft:'-60px',marginTop:'20px',}} >
             <ButtonAppBar text="Teaching and learning"></ButtonAppBar>
             <Paper className={classes.card}>
             <Card className={classes.root}>

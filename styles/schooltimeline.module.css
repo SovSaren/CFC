@@ -1,5 +1,10 @@
-
-  .item{
-      color: black;
-      border-radius: 30;
-  }
+.btn{
+    margin-right: 200px;
+    outline: olivedrab;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(to right,#8cb5eb,#a8e1f0);
+};
+.cencel{
+    width: 100px;
+}

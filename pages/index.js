@@ -20,11 +20,26 @@ const Register = () => {
     const handleCreateUser = (e) =>{
         e.preventDefault();
         setLoading(true);
-       const {email,password} = e.target.elements;
+       const {email,password,username} = e.target.elements;
+       console.log(email.value,username.value)
        fireAuth.createUserWithEmailAndPassword(email.value,password.value)
        .then((res) =>{
-           router.push('/loginpage');
-           setLoading(false)
+           const user = fireAuth.currentUser;
+           
+           user.updateProfile({
+               displayName: username.value,
+               photoURL:'https://pic.onlinewebfonts.com/svg/img_568656.png',
+               
+               
+           }).then((res)=>{
+               console.log(res)
+               router.push('/loginpage');
+           }).catch((err)=>{
+               console.log(error)
+           })
+           
+           setLoading(false);
+           console.log("sign up")
        }).catch((err)=>{
            console.error(err)
            setError(err.message);
@@ -48,6 +63,7 @@ const Register = () => {
                             fullWidth 
                             label='Name' 
                             placeholder="Enter your name" 
+                            name="username"
                             required/>
                         <TextField  
                             fullWidth 
@@ -55,11 +71,7 @@ const Register = () => {
                             placeholder="Enter your email" 
                             name="email"
                             required/>
-                        <TextField 
-                            fullWidth 
-                            label='Phome Number' 
-                            placeholder="Enter your phone number" 
-                            required/>
+
                         <TextField  
                             fullWidth label='Password' 
                             placeholder="Enter your name"
@@ -68,6 +80,12 @@ const Register = () => {
                             name="password"
                             required
                             />
+                        <TextField 
+                            fullWidth 
+                            label='Phome Number' 
+                            placeholder="Enter your phone number" 
+                            name="phoneNumber"
+                            required/>
                         <Typography color="secondary">{error}</Typography>
                         <FormControl component = "fieldset" style={{marginTop:20,}}>
                             <FormLabel component="leged">Gender</FormLabel>
